@@ -6,6 +6,8 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
 
-group :development do 
+group :development do #to chto ne budet zalewatsja 
         gem "tux"
     end
+
+    #bundle instal    "instalacija gemow"
