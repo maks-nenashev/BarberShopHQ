@@ -6,7 +6,12 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barbershop.db" #Sozdanie bazy dannyh
 
-class Client < ActiveRecord::Base    #Sozdanie susznosti
+# (rake db:create_migration NAME=create_clients) <Code dla sozdanija faila s bazami danyh db>
+class Client < ActiveRecord::Base    #Sozdanie susznosti 
+ end
+
+# (rake db:create_migration NAME=create_barbers) <Code dla sozdanija faila s bazami danyh db>
+class Barber < ActiveRecord::Base 
  end
 
 get '/' do

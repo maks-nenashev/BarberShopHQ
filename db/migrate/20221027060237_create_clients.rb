@@ -3,12 +3,12 @@ class CreateClients < ActiveRecord::Migration[7.0]
   
     create_table :client do |t|
     t.text :name
-    t.text :phone
+    t.text :phone               # W tablice "client" budet sozdany t
     t.text :datestamp
     t.text :barber
     t.text :color
 
-    t.timestamps
+    t.timestamps # ((created_at vs updated_at)) "Sozdanie stolbca s datoy sozdanija i datoy wpisa"
   end
  end
 end
