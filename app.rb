@@ -1,11 +1,12 @@
 #encoding: utf-8
 require 'rubygems'
+require 'sqlite3'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
-require 'sequel'
 
-set :database, "sqlite3:barbershop.db" #Sozdanie bazy dannyh
+set :database, {adapter: "sqlite3", database: "barbershop.db"}
+#set :database, "sqlite3:barbershop.db" #Sozdanie bazy dannyh
 
 # (rake db:create_migration NAME=create_clients) <Code dla sozdanija faila s bazami danyh db>
 class Client < ActiveRecord::Base    #Sozdanie susznosti 
