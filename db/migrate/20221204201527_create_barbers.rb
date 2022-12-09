@@ -10,7 +10,7 @@ class CreateBarbers < ActiveRecord::Migration[7.0]
   end
    
    Barber.create :name => 'Jessy Pinknam'
-   Barber.create :name => 'Walter White'
+   Barber.create :name => 'Walter White'  # Napolnenie tablicy
    Barber.create :name => 'Gus Fring'   
    
    end
