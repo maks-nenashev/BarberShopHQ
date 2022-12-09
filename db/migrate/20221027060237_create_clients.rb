@@ -13,3 +13,12 @@ class CreateClients < ActiveRecord::Migration[7.0]
   end
  end
 end
+                                      #_barber
+# (rake db:create_migration NAME=create_clients) <Code dla sozdanija faila s bazami danyh db>
+
+#Barber.create  --zapis w bazu
+
+# b = Barber.naw  --zapis w pamiat
+# b.sawe --wyzow iz pamiaty
+
+
