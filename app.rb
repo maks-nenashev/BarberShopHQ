@@ -19,5 +19,6 @@ class Barber < ActiveRecord::Base    #Sozdanie susznosti
  end
 
 get '/' do
-	erb "Hello"
-end
+	@barbers = Barber.all
+    erb :index
+ end
