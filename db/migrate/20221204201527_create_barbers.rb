@@ -20,6 +20,6 @@ class CreateBarbers < ActiveRecord::Migration[7.0]
 
 #Barber.create  --zapis w bazu
 
-# b = Barber.naw  --zapis w pamiat
+# b = Barber.naw :name => 'Maks Belou' --zapis w pamiat
 # b.sawe --wyzow iz pamiaty
 
