@@ -18,7 +18,25 @@ class Client < ActiveRecord::Base    #Sozdanie susznosti
 class Barber < ActiveRecord::Base    #Sozdanie susznosti 
  end
 
+before do
+    @barbers = Barber.order "created_at DESC" #Barber.all
+  end
+
 get '/' do
-	@barbers = Barber.all
-    erb :index
- end
+   erb :index
+  end
+
+get "/visit" do
+    erb :visit  #podkluczenie fila HTML
+  end
+
+post "/visit" do
+    @name = params[:name]  #Peredacza i cztenie parametra s HTML "Fail <layout.erb>"
+    @phone = params[:phone]
+    @adres = params[:datetime]
+    @barber = params[:barber]
+    @color = params[:color]
+
+    erb "Spasibo wy zapisalis!"
+
+  end
