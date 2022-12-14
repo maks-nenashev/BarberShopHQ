@@ -19,7 +19,7 @@ class Barber < ActiveRecord::Base    #Sozdanie susznosti
  end
 
 before do
-    @barbers = Barber.order "created_at DESC" #Barber.all
+    @barbers = Barber.order "created_at DESC" #Barber.all #Wywod spiska parikmaherow
   end
 
 get '/' do
@@ -33,9 +33,18 @@ get "/visit" do
 post "/visit" do
     @name = params[:name]  #Peredacza i cztenie parametra s HTML "Fail <layout.erb>"
     @phone = params[:phone]
-    @adres = params[:datetime]
+    @data = params[:datestamp]
     @barber = params[:barber]
     @color = params[:color]
+
+    
+    c = Client.new
+    c.name = @name
+    c.phone = @phone
+    c.datestamp = @data
+    c.barber = @barber
+    c.color = @color
+    c.save
 
     erb "Spasibo wy zapisalis!"
 
