@@ -7,15 +7,15 @@
     
     <legend>Ваше имя</legend>   
       <label class="form-label">Введите ваше имя</label>                               <!Sochranenie znachenija w pole>
-      <input name="client[name]" id="aaa"  type="text" class="form-control" placeholder="Ваше имя" value="<%= @name %>">
+      <input name="client[name]" id="aaa" type="text" class="form-control" placeholder="Ваше имя" value="<%= @c.name %>">
     
     <legend>Телефон</legend>   
       <label class="form-label">Введите ваш Телефон</label>                               <!Sochranenie znachenija w pole>
-      <input  name="client[phone]" type="text" class="form-control bbb" placeholder="Ваш телефон" value="<%= @phone %>">
+      <input name="client[phone]" type="text" class="form-control bbb" placeholder="Ваш телефон" value="<%= @c.phone %>">
                                  <!Izmenenie cweta cherez class="form-control bbb >
     <legend>Дата и Время</legend>  
       <label class="form-label">Введите вашу Дату и Время</label>                                    <!Sochranenie znachenija w pole>   
-      <input name="client[datestamp]" type="text" id="demo" class="form-control" placeholder="Дата и время" value="<%= @date %>">
+      <input name="client[datestamp]" type="text" id="demo" class="form-control" placeholder="Дата и время" value="<%= @c.datestamp %>">
 
 </div>
 
