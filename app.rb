@@ -12,7 +12,11 @@ set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 # (rake db:create_migration NAME=create_clients) <Code dla sozdanija faila s bazami danyh db>
 class Client < ActiveRecord::Base    #Sozdanie susznosti 
- end
+    validates :name, presence: true
+    validates :phone, presence: true, length: {minimum: 3} #Walidacija!!!
+    validates :datestamp, presence: true
+    validates :color, presence: true
+  end
 
 # (rake db:create_migration NAME=create_barbers) <Code dla sozdanija faila s bazami danyh db>
 class Barber < ActiveRecord::Base    #Sozdanie susznosti 
@@ -27,13 +31,20 @@ get '/' do
   end
 
 get "/visit" do
+    @c = Client.new #Bez etoj global peremennoj ne budet otkryt ":visit"
    erb :visit  #podkluczenie fila HTML
   end
 
 post "/visit" do
     
-   c = Client.new params[:client]
-   c.save
-
-    erb "Spasibo wy zapisalis!"
-  end
+   @c = Client.new params[:client]
+   if @c.save
+      
+    erb "<h2>Spasibo wy zapisalis!</h2>"
+   
+   else
+     @error = @c.errors.full_messages.first  
+     erb :visit
+     #erb "<h2>Bag!</h2>"
+    end
+   end
