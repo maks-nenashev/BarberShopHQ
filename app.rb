@@ -17,9 +17,9 @@ class Client < ActiveRecord::Base    #Sozdanie susznosti
 # (rake db:create_migration NAME=create_barbers) <Code dla sozdanija faila s bazami danyh db>
 class Barber < ActiveRecord::Base    #Sozdanie susznosti 
  end
-
-before do
-    @barbers = Barber.order "created_at DESC" #Barber.all #Wywod spiska parikmaherow
+                    #Wywod spiska parikmaherow
+before do          #wwerh nogami "method order"
+    @barbers = Barber.order "created_at DESC" #Barber.all 
   end
 
 get '/' do
@@ -27,25 +27,13 @@ get '/' do
   end
 
 get "/visit" do
-    erb :visit  #podkluczenie fila HTML
+   erb :visit  #podkluczenie fila HTML
   end
 
 post "/visit" do
-    @name = params[:name]  #Peredacza i cztenie parametra s HTML "Fail <layout.erb>"
-    @phone = params[:phone]
-    @data = params[:datestamp]
-    @barber = params[:barber]
-    @color = params[:color]
-
     
-    c = Client.new
-    c.name = @name
-    c.phone = @phone
-    c.datestamp = @data
-    c.barber = @barber
-    c.color = @color
-    c.save
+   c = Client.new params[:client]
+   c.save
 
     erb "Spasibo wy zapisalis!"
-
   end
