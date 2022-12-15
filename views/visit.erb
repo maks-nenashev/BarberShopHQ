@@ -7,20 +7,20 @@
     
     <legend>Ваше имя</legend>   
       <label class="form-label">Введите ваше имя</label>                               <!Sochranenie znachenija w pole>
-      <input name="name" id="aaa"  type="text" class="form-control" placeholder="Ваше имя" value="<%= @name %>">
+      <input name="client[name]" id="aaa"  type="text" class="form-control" placeholder="Ваше имя" value="<%= @name %>">
     
     <legend>Телефон</legend>   
       <label class="form-label">Введите ваш Телефон</label>                               <!Sochranenie znachenija w pole>
-      <input  name="phone" type="text" class="form-control bbb" placeholder="Ваш телефон" value="<%= @phone %>">
+      <input  name="client[phone]" type="text" class="form-control bbb" placeholder="Ваш телефон" value="<%= @phone %>">
                                  <!Izmenenie cweta cherez class="form-control bbb >
     <legend>Дата и Время</legend>  
       <label class="form-label">Введите вашу Дату и Время</label>                                    <!Sochranenie znachenija w pole>   
-      <input name="datestamp" type="text" id="demo" class="form-control" placeholder="Дата и время" value="<%= @date %>">
+      <input name="client[datestamp]" type="text" id="demo" class="form-control" placeholder="Дата и время" value="<%= @date %>">
 
 </div>
 
   <div class="form-group">
-  <select name="barber" class="form-control">
+  <select name="client[barber]" class="form-control">
     <option selected>Ваше меню</option>
      
     <!--          <!Sochranenie znachenija w pole I zagruzka w pole parikmacherow>
@@ -40,7 +40,7 @@
                   <!Podkluczenie bloka color>
    <div class="from-group">  
    <label>Цвет краски:</label>
-<select id="color" name="color">   <!Podkluczenie js color, + name="color" peredacza na server>
+<select id="color" name="client[color]">   <!Podkluczenie js color, + name="color" peredacza na server>
   <option value="Green">Green</option>
   <option value="SteelBlue">SteelBlue</option>
   <option value="Blue">Blue</option>
