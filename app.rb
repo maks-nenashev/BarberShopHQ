@@ -31,20 +31,24 @@ get '/' do
   end
 
 get "/visit" do
-    @c = Client.new #Bez etoj global peremennoj ne budet otkryt ":visit"
+   @c = Client.new #Bez etoj global peremennoj ne budet otkryt ":visit"
    erb :visit  #podkluczenie fila HTML
   end
 
 post "/visit" do
-    
    @c = Client.new params[:client]
    if @c.save
       
-    erb "<h2>Spasibo wy zapisalis!</h2>"
+   erb "<h2>Spasibo wy zapisalis!</h2>"
    
    else
-     @error = @c.errors.full_messages.first  
-     erb :visit
+     @error = @c.errors.full_messages.first  #Wywod "Walidacii"
+   erb :visit
      #erb "<h2>Bag!</h2>"
     end
    end
+
+get "/barber/:id" do
+   @barber = Barber.find(params[:id])  
+   erb :barber
+  end
