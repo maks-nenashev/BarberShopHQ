@@ -48,7 +48,12 @@ post "/visit" do
     end
    end
 
-get "/barber/:id" do
+get "/barber/:id" do   #Podkluczenie i wywod barberow
    @barber = Barber.find(params[:id])  
    erb :barber
+  end
+
+get "/bookings" do
+   @clients = Client.all
+   erb :bookings
   end
