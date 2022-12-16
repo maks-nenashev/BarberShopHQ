@@ -1,10 +1,11 @@
 <h1>Записаться!</h1>
 <p>Записаться в Barber Shop!<p>
-
+        
+        <!Wywod barberow w "index">
 <%@barbers.each do |barber| %>
 
-<p>
-<%=barber.name%>
+<p>       <!Delaet s imen barberow ssylku>
+<a href="/barber/<%= barber.id%>">   <%=barber.name%>
 </p>
 
 <% end %>
