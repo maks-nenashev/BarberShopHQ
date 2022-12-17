@@ -1,0 +1,11 @@
+<h2>Список записавшихся!</h2>
+
+        
+        <!Wywod imen clientow w "bookings">
+<% @clients.each do |client| %>
+
+<p>       <!Delaet s imen ssylku>
+<a href="/client/<%= client.id%>">   <%=client.name%>
+</p>
+
+<% end %>

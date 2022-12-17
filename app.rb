@@ -53,7 +53,7 @@ get "/barber/:id" do   #Podkluczenie i wywod barberow
    erb :barber
   end
 
-get "/bookings" do
-   @clients = Client.all
+get "/bookings" do   #podkluczenie i wywod imen zapisawchihsa
+   @clients = Client.order('created_at DESC') #order('created_at DESC')Imena s poslednego zapisawchego
    erb :bookings
   end
